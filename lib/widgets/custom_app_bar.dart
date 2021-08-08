@@ -26,7 +26,7 @@ class CustomAppBar extends StatelessWidget {
       height: 65.0,
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.grey[900],
         boxShadow: const [
           BoxShadow(
             color: Colors.black12,
@@ -49,19 +49,23 @@ class CustomAppBar extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            height: double.infinity,
-            width: 600.0,
-            child: CustomTabBar(
-              icons: icons,
-              selectedIndex: selectedIndex,
-              onTap: onTap,
-              isBottomIndicator: true,
+          Expanded(
+            child: Container(
+              height: double.infinity,
+              width: 600.0,
+              child: CustomTabBar(
+                icons: icons,
+                selectedIndex: selectedIndex,
+                onTap: onTap,
+                isBottomIndicator: true,
+              ),
             ),
           ),
-          Expanded(child: Row(
+          Expanded(
+              child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
+              ChangeThemeButtonWidget(),
               UserCard(user: currentUser),
               const SizedBox(width: 12.0,),
               CircleButton(icon:Icons.search, iconSize: 30.0, onPressed: ()=> print('Search')),

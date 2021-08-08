@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_facebook_responsive_ui/models/models.dart';
 import 'package:flutter_facebook_responsive_ui/widgets/profile_avatar.dart';
 import 'package:flutter_facebook_responsive_ui/widgets/widgets.dart';
+import 'theme_provider.dart';
 
 class CreatePostContainer extends StatelessWidget {
   final User currentUser;
@@ -23,7 +24,7 @@ class CreatePostContainer extends StatelessWidget {
           : null,
       child: Container(
         padding: const EdgeInsets.fromLTRB(12.0, 8.0, 12.0, 0.0),
-        color: Colors.white,
+        color: Colors.grey[900],
         child: Column(
           children: [
             Row(
@@ -34,8 +35,12 @@ class CreatePostContainer extends StatelessWidget {
                 ),
                 Expanded(
                   child: TextField(
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                     decoration: InputDecoration.collapsed(
-                        hintText: 'What\'s on your mind?'),
+                        hintText: 'What\'s on your mind?',
+                    ),
                   ),
                 ),
               ],

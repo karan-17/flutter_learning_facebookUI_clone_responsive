@@ -16,7 +16,7 @@ class PostContainer extends StatelessWidget {
     return Container(
         margin: const EdgeInsets.symmetric(vertical: 5.0),
         padding: const EdgeInsets.symmetric(vertical: 8.0),
-        color: Colors.white,
+        color: Colors.grey[900],
         child: Column(
           children: [
             Padding(
@@ -28,7 +28,7 @@ class PostContainer extends StatelessWidget {
                   const SizedBox(
                     height: 4.0,
                   ),
-                  Text(post.caption),
+                  Text(post.caption, style: TextStyle(color: Colors.white),),
                   post.imageUrl != null
                       ? const SizedBox.shrink()
                       : const SizedBox(
@@ -69,7 +69,7 @@ class _PostHeader extends StatelessWidget {
             children: [
               Text(
                 post.user.name,
-                style: TextStyle(fontWeight: FontWeight.w600),
+                style: TextStyle(fontWeight: FontWeight.w600, color: Colors.white60),
               ),
               Row(
                 children: [
@@ -194,7 +194,7 @@ class _PostButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Material(
-        color: Colors.white,
+        color: Colors.grey[900],
         child: InkWell(
           onTap: onTap,
           child: Container(
@@ -205,7 +205,7 @@ class _PostButton extends StatelessWidget {
               children: [
               icon,
               const SizedBox(width: 4.0,),
-              Text(label),
+              Text(label, style: TextStyle(color: Colors.grey[600]),),
               ],
             ),
           ),

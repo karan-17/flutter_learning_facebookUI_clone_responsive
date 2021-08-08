@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_facebook_responsive_ui/config/palette.dart';
 import 'package:flutter_facebook_responsive_ui/data/data.dart';
 import 'package:flutter_facebook_responsive_ui/models/models.dart';
+import 'package:flutter_facebook_responsive_ui/widgets/change_theme_button_widget.dart';
 import 'package:flutter_facebook_responsive_ui/widgets/circle_button.dart';
 import 'package:flutter_facebook_responsive_ui/widgets/widgets.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -46,11 +47,12 @@ class _HomeScreenMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme =  MediaQuery.of(context).platformBrightness == Brightness.light ? ThemeData.dark(): ThemeData.light();
     return CustomScrollView(
       controller: scrollController,
       slivers: [
         SliverAppBar(
-          brightness: Brightness.light,
+          brightness: Brightness.dark,
           backgroundColor: Colors.white,
           title: Text(
             'facebook',

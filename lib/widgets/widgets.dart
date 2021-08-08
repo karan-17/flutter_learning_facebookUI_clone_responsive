@@ -10,3 +10,5 @@ export 'custom_app_bar.dart';
 export 'user_card.dart';
 export 'contacts_list.dart';
 export 'more_options.dart';
+export 'theme_provider.dart';
+export 'change_theme_button_widget.dart';
